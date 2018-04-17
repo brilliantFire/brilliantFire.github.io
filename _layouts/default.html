@@ -13,9 +13,6 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-    {% if site.tags != "" %}
-    {% include collecttags.html %}
-    {% endif %}
 
   </head>
 
@@ -51,5 +48,10 @@
     </div>
 
     {% include analytics.html %}
+    
+    {% if site.tags != "" %}
+      {% include collecttags.html %}
+    {% endif %}
+    
   </body>
 </html>
