@@ -1,6 +1,7 @@
 ---
 layout: post
 comments: true
+tags: Getting Started
 title: Sibilance...sibilance...
 ---
 
