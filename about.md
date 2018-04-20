@@ -7,7 +7,7 @@ permalink: /about/
 ## Hello! 
 I'm Rebecca Vislay Wade. My interests include neuroscience, data science, operations, and health care. Currently, I do data management and analysis for [KWF Editorial Services](https://www.kwfco.com/scholarly-journal-editing/), a leading provider of editorial services for the scholarly publishing community.
 
-I am interested in opportunities to use data science to help people, especially in health care analytics, digital therapeutic development, and drug discovery. I'd love to discuss what I might bring to your team so please don't hesitate to reach out via the links at the bottom of the page!  
+I am interested in professional opportunities to use data science to help people, especially in health care analytics, digital therapeutic development, and drug discovery. I'd love to discuss what I might bring to your team so please don't hesitate to reach out via the links at the bottom of the page!  
 
 ### EDUCATION
 * MS, Predictive Analytics, Northwestern University, 2016 - 2018 (expected)  
