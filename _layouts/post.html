@@ -8,7 +8,7 @@ layout: default
  <span>{
    {% for tag in page.tags %}
      {% capture tag_name %}{{ tag }}{% endcapture %}
-     <a style = "color: $blue;font-family: $helveticaNeue;text-transform: uppercase;font-size: 15px;" href="/tag/{{ tag_name }}" class="read-more"><code class="highlighter-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+     <a style="color:$blue;font-family:$helveticaNeue;text-transform:uppercase;font-size:15px;" href="/tag/{{ tag_name }}"><code class="highlighter-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
    {% endfor %}
   }</span>
 
