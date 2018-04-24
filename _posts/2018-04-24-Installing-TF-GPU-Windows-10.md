@@ -88,8 +88,8 @@ __One last important tip:__ If you're going on to install the [Keras](https://ke
 #### Test the installation.
 You can use this code to see whether TensorFlow is installed and that it's using your GPU.  
 
-`from tensorflow.python.client import device_lib  
-device_lib.list_local_devices()`  
+`from tensorflow.python.client import device_lib`  
+`device_lib.list_local_devices()`   
 
 If it is, you should see your GPU in the list (like the GeForce GT 730 below).
 ![SUCCESS!](https://i.imgur.com/8AImXBR.png)
