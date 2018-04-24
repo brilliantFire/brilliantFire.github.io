@@ -31,4 +31,4 @@ I am interested in professional opportunities to use data science to help people
 * I have seen my favorite band, Phish, 57 times in 14 different states so far. Check out the [Mockingbird Foundation](http://mbird.org/), a nonprofit organization run by Phish "phans" in support of music education. 
 * In addition to seeing live music, I enjoy reading, hiking, and birdwatching in my spare time.
 * I am a western Pennsylvania native and currently live in the Greater Pittsburgh Area with my husband, Tim, and our cat, Bialy.
-* I'm one of the [~2.8% of Americans living with bipolar diorder](https://www.nimh.nih.gov/health/statistics/bipolar-disorder.shtml)
+* I'm one of the [~2.8% of Americans living with bipolar diorder](https://www.nimh.nih.gov/health/statistics/bipolar-disorder.shtml).
