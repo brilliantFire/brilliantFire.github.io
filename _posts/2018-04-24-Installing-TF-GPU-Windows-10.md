@@ -59,28 +59,30 @@ You'll need to sign up for a free developer account with NVIDIA for access. The 
 
 #### 6. Add the cuDNN files to the CUDA installation.
 Once you've unzipped the cuDNN download, you'll see that you have a "CUDA" folder with three more folders inside called 'bin', 'include', and 'lib'. We need to find the corresponding 'bin', 'include', and 'lib' folders in the CUDA installation which will be located somewhere like  
+
 `C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v.9.0`  
+
 Take the cuDNN file from the 'bin' folder (the one you got by unzipping) and drag/drop it into the 'bin' folder in the CUDA installation. Repeat for the cuDNN files in 'include' and 'lib'. **Do not drag and drop the entire folder.** Only the files inside.
 
 #### 7. Create a conda environment with Python 3.5 and install the TensorFlow-GPU package.
 From here, I mostly followed the instructions in the **Installing with Anaconda** section of the [Windows installation instructions for TensorFlow](https://www.tensorflow.org/install/install_windows). The only thing I changed was to add the [Anaconda suite of packages](https://docs.anaconda.com/anaconda/packages/py3.5_win-64) to the environment (that way things like pandas and sklearn are already in there).  
 
-Open the Anaconda prompt and use the following to create the environment, named "tensorflow":
+Open the Anaconda prompt and use the following to create the environment, named "tensorflow":  
 `
 C:> conda create -n tensorflow pip python=3.5 anaconda
 `
-(The "anaconda" on the end adds those packages I was talking about.)
+(The "anaconda" on the end adds those packages I was talking about.)  
 
-Next, activate the environment by entering:
+Next, activate the environment by entering:  
 `
 C:> activate tensorflow
 `
-The prompt should change. Now, use the following to install the tensorflow-gpu package:
+The prompt should change. Now, use the following to install the tensorflow-gpu package:  
 `
 (tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu 
 `
 
-**And you should be good to go!**
+**And you should be good to go!**  
 
 __One last important tip:__ If you're going on to install the [Keras](https://keras.io/) package, be sure to install the *GPU version (keras-gpu)*. The other version comes with non-GPU TensorFlow as a dependency and that will overwrite the GPU version you just installed.
 
