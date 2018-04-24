@@ -4,7 +4,7 @@ comments: true
 tags: TensorFlow GPU Anaconda Windows10
 title: Installing TensorFlow-GPU on a Windows 10 Machine
 ---
-A few months back I discovered that my three-year-old Dell desktop has a small but nonetheless CUDA-enabled NVIDIA GPU. While the [GeForce GT 730](https://www.geforce.com/hardware/desktop-gpus/geforce-gt-730) I found - with it's itty-bitty set of 384 cores and tiny 2GB stash of VRAM -  is not super-great for training big, gnarly deep neural networks, I figured any GPU is better than no GPU. So, as an aspiring data scientist and big, big fan of neural networks (real *and* artificial), I got a little excited, wondering 
+A few months back I discovered that my three-year-old Dell desktop has a small but nonetheless CUDA-enabled NVIDIA GPU. While the [GeForce GT 730](https://www.geforce.com/hardware/desktop-gpus/geforce-gt-730) I found - with it's itty-bitty set of 384 cores and tiny 2GB stash of VRAM -  is not super-great for training big, gnarly deep neural networks, I figured any GPU is better than no GPU. So, as an aspiring data scientist and big, big fan of neural networks (real *and* artificial), I got a little excited, wondering... 
 
 > #### "How do I get TensorFlow running on this bad Larry *RIGHT EFFING NOW!?!?*"
 
