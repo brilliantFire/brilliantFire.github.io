@@ -79,7 +79,7 @@ Next, activate the environment by entering:
 
 The prompt should change. Now, use the following to install the tensorflow-gpu package:  
 
-`(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu`  
+`(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu`    
 
 **And you should be good to go!**  
 
