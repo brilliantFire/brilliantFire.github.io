@@ -4,7 +4,6 @@ comments: true
 tags: TensorFlow GPU Anaconda Windows10
 title: Installing TensorFlow-GPU on a Windows 10 Machine
 ---
-
 A few months back I discovered that my three-year-old Dell desktop has a small but nonetheless CUDA-enabled NVIDIA GPU. While the [GeForce GT 730](https://www.geforce.com/hardware/desktop-gpus/geforce-gt-730) I found - with it's itty-bitty set of 384 cores and tiny 2GB stash of VRAM -  is not super-great for training big, gnarly deep neural networks, I figured any GPU is better than no GPU. So, as an aspiring data scientist and big, big fan of neural networks (real *and* artificial), I got a little excited, wondering 
 
 > #### "How do I get TensorFlow running on this bad Larry *RIGHT EFFING NOW!?!?*"
@@ -59,9 +58,9 @@ You'll need to sign up for a free developer account with NVIDIA for access. The 
 
 #### 6. Add the cuDNN files to the CUDA installation.
 Once you've unzipped the cuDNN download, you'll see that you have a "CUDA" folder with three more folders inside called 'bin', 'include', and 'lib'. We need to find the corresponding 'bin', 'include', and 'lib' folders in the CUDA installation which will be located somewhere like
-```
+`
 C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v.9.0
-```
+`
 Take the cuDNN file from the 'bin' folder (the one you got by unzipping) and drag/drop it into the 'bin' folder in the CUDA installation. Repeat for the cuDNN files in 'include' and 'lib'. **Do not drag and drop the entire folder.** Only the files inside.
 
 #### 7. Create a conda environment with Python 3.5 and install the TensorFlow-GPU package.
