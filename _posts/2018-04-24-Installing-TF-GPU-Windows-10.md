@@ -16,7 +16,7 @@ Turns out, this is not at all a clear-cut endeavor if your operating system is W
 You can install and use TensorFlow-GPU on a machine with a GPU of lower compute compatability just fine except that it won't actually run things on the GPU. Just the CPU. 
 
 #### 2. The installation I'm about to describe here requires [Anaconda](https://www.anaconda.com/download/), a package and environment manager for Python. 
-Click the link, then download and install the Python 3.6 version, if you don't already have it. I :heart: Anaconda and could say a lot about it but I'll save that for another post.
+Click the link, then download and install the Python 3.6 version, if you don't already have it. I love Anaconda and could say a lot about it but I'll save that for another post <3
 
 #### 3. (Optional) I recommend downloading [Revo Uninstaller](https://www.revouninstaller.com/revo_uninstaller_free_download.html?gclid=CjwKCAjwnLjVBRAdEiwAKSGPI481vBfbg8ZZL9fXGXW5v4c9Zbnk8Y-KJ0mUoeBcdYtLvde_4AxyZhoCMnEQAvD_BwE) and using it to uninstall CUDA if you have to go back and try again.
 If the CUDA installation doesn't work for some reason, I found it to be easiest to uninstall it and try over. Using something like Revo Uninstaller to clear everything out (directories, etc.) helps.  
