@@ -39,7 +39,8 @@ Open Python and enter `import tensorflow`. It's going to fail but, like most fai
 
 **If the errors mention a missing "cudart64_90.dll" file or anything other than cuDNN...**  
 Well, we can either:
-- Proceed to Step 4 and try manually setting the `Path` environment variable (YIKES), or
+- Proceed to Step 4 and try manually setting the `Path` environment variable (YIKES), 
+or
 - Uninstall and reinstall CUDA until it works (my recommendation).
 
 #### 4. Double-check the `Path` environment variable.
