@@ -24,7 +24,7 @@ If the CUDA installation doesn't work for some reason, I found it to be easiest 
 ## 7 Steps to Installing TensorFlow-GPU
 
 #### 1. Download and install [Microsoft Visual Studio Community 2015 with Update 3](https://my.visualstudio.com/Downloads?q=Visual%20Studio%202015%20with%20Update%203).
-The link above will take you to a page that requires you to sign up for a free developer account with Microsoft. Follow the recommended installation instructions. This could take a while.
+The link above will take you to a page that requires a free developer account with Microsoft. Follow the recommended installation instructions. This could take a while.
 
 #### 2. Download and install [CUDA 9.0](https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork) (_NOT_ 9.1).
 As of this post (April 2018), 9.1 is the most recent version of the CUDA Toolkit (but it looks like 9.2 is coming soon). TensorFlow-GPU (I have version 1.1.0) right now only works with CUDA 9.0, so be sure to get that version. Follow the recommended installation.
