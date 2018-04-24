@@ -58,10 +58,8 @@ You should see a few instances of the CUDA directory in there (green box below).
 You'll need to sign up for a free developer account with NVIDIA for access. The above link goes to the archive site. Scroll down and click the "Download cuDNN v7.0.5 (Dec 5, 2017), for CUDA 9.0" link. Download the Windows 10 version. It's a .zip file. Save it someplace memorable. Once the download is finished, unzip in the directory you saved it to.
 
 #### 6. Add the cuDNN files to the CUDA installation.
-Once you've unzipped the cuDNN download, you'll see that you have a "CUDA" folder with three more folders inside called 'bin', 'include', and 'lib'. We need to find the corresponding 'bin', 'include', and 'lib' folders in the CUDA installation which will be located somewhere like
-`
-C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v.9.0
-`
+Once you've unzipped the cuDNN download, you'll see that you have a "CUDA" folder with three more folders inside called 'bin', 'include', and 'lib'. We need to find the corresponding 'bin', 'include', and 'lib' folders in the CUDA installation which will be located somewhere like  
+`C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v.9.0`  
 Take the cuDNN file from the 'bin' folder (the one you got by unzipping) and drag/drop it into the 'bin' folder in the CUDA installation. Repeat for the cuDNN files in 'include' and 'lib'. **Do not drag and drop the entire folder.** Only the files inside.
 
 #### 7. Create a conda environment with Python 3.5 and install the TensorFlow-GPU package.
