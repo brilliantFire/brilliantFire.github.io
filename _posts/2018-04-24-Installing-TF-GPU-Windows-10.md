@@ -34,10 +34,10 @@ Open Python and enter `import tensorflow`. It's going to fail but, like most fai
 - Whether our CUDA installation worked; and, if it did,
 - Which version of the cuDNN library we need to download and put into the CUDA installation.  
 
-**If the errors say something about a missing "cuDNN64_7.dll" file...  **  
-CONGRATULATIONS!! CUDA appears to be successfully installed! What's more, we can tell which version of the cuDNN library we need by looking at the number after the underscore in the name of the file it's asking for. This should be 7, which is the cuDNN version noted in [TensorFlow's instructions for installing on Windows](https://www.tensorflow.org/install/install_windows). Keep this in mind and proceed to Step 4.  
+**If the errors say something about a missing "cuDNN64_7.dll" file...**  
+*CONGRATULATIONS!!* CUDA appears to be successfully installed! What's more, we can tell which version of the cuDNN library we need by looking at the number after the underscore in the name of the file it's asking for. This should be 7, which is the cuDNN version noted in [TensorFlow's instructions for installing on Windows](https://www.tensorflow.org/install/install_windows). Keep this in mind and proceed to Step 4.  
 
-**If the errors mention a missing "cudart64_90.dll" file or anything other than cuDNN...  **  
+**If the errors mention a missing "cudart64_90.dll" file or anything other than cuDNN...**  
 Well, we can either:
 - Proceed to Step 4 and try manually setting the `Path` environment variable (YIKES), or
 - Uninstall and reinstall CUDA until it works (my recommendation).
