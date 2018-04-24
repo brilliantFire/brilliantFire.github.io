@@ -68,19 +68,18 @@ Take the cuDNN file from the 'bin' folder (the one you got by unzipping) and dra
 From here, I mostly followed the instructions in the **Installing with Anaconda** section of the [Windows installation instructions for TensorFlow](https://www.tensorflow.org/install/install_windows). The only thing I changed was to add the [Anaconda suite of packages](https://docs.anaconda.com/anaconda/packages/py3.5_win-64) to the environment (that way things like pandas and sklearn are already in there).  
 
 Open the Anaconda prompt and use the following to create the environment, named "tensorflow":  
-`
-C:> conda create -n tensorflow pip python=3.5 anaconda
-`
+
+`C:> conda create -n tensorflow pip python=3.5 anaconda`  
+
 (The "anaconda" on the end adds those packages I was talking about.)  
 
 Next, activate the environment by entering:  
-`
-C:> activate tensorflow
-`
+
+`C:> activate tensorflow`  
+
 The prompt should change. Now, use the following to install the tensorflow-gpu package:  
-`
-(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu 
-`
+
+`(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu`  
 
 **And you should be good to go!**  
 
