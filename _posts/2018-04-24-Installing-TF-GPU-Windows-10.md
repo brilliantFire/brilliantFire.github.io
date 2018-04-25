@@ -86,7 +86,7 @@ The prompt should change. Now, use the following to install the tensorflow-gpu p
 __One last important tip:__ If you're going on to install the [Keras](https://keras.io/) package, be sure to install the *GPU version (keras-gpu)*. The other version comes with non-GPU TensorFlow as a dependency and that will overwrite the GPU version you just installed.
 
 #### Test the installation.
-You can use this code to see whether TensorFlow is installed and that it's using your GPU.  
+You can use this code to see if TensorFlow is installed and confirm that it's using your GPU.  
 
 `from tensorflow.python.client import device_lib`  
 `device_lib.list_local_devices()`   
