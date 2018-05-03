@@ -75,8 +75,6 @@ sass:
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-
-plugins:
   - jekyll-jupyter-notebook # Added gem from https://github.com/red-data-tools/jekyll-jupyter-notebook; Jupyter notebook support
 
 # Exclude these files from your production _site
