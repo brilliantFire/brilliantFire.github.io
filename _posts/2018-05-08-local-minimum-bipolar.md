@@ -2,7 +2,7 @@
 layout: post
 comments: true
 tags: bipolar suicide depression
-title: local minima
+title: Local Minimum
 ---
 I saw someone on science Twitter recently asking their colleagues: "What have you sacrificed to have a scientific career?" It got me thinking. Sometimes I feel as if I ended up sacrificing a scientific career for the possibility of a future one but that's not true at all. Sacrifice implies a choice in the matter and I had none.  
 
