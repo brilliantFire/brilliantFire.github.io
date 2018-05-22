@@ -5,15 +5,15 @@ tags: dementia R-stats data-visualization unsupervised-methods gene-expression R
 title: Visualizing Gene Expression Profiles with Multidimensional Scaling
 ---
 
-Hi everyone!  This is the second installment in my quest to blog my way through a Master's thesis project (Predictive Analytics, Northwestern). In the [inaugural post](http://blog.vislaywade.com/allen-dementia-gene-expression-data-load-R/), I loaded and saved the gene expression data for the 377 brain samples in the Allen Institute for Brain Science's [*Aging, Dementia, & TBI Study*](http://aging.brain-map.org/) dataset. I've messed around with the data quite a bit since then and it seemed like a good time to share some of the things I've learned so far. The ultimate goal of this project is to (somehow) combine this genetic data with other kinds of data available for these samples (neuropathological measurements, demographic information) in models of dementia status.
+Hi everyone!  This is the second installment in my quest to blog my way through a Master's thesis project (Predictive Analytics, Northwestern). In the [inaugural post](http://blog.vislaywade.com/allen-dementia-gene-expression-data-load-R/), I loaded and saved the gene expression data for the 377 brain samples in the Allen Institute for Brain Science's [*Aging, Dementia, & TBI Study*](http://aging.brain-map.org/) dataset. I've messed around with the data quite a bit since then and it seemed like a good time to share some of the things I've learned so far. Just to remind you: The ultimate goal of this project is to (somehow) combine this gene expression data with other kinds of data available for these samples (neuropathological measurements, demographic information) in models of dementia status ("Dementia" versus "No Dementia"). Most likely these final models will be linear (AKA logistic regression).
 
 This is the first of a couple of posts about exploratory analysis of gene expression data, including identifying *differentially expressed genes*. In this case, those are genes that are up- or down-regulated in samples from donors with dementia versus without it. The expression levels of such genes (or groups/clusters of genes) would be good candidates to include as predictors in the final models. Before we get to that, though, I thought I'd try out a way of visualizing high-dimensional data. It's an unsupervised learning method called [*multidimensional scaling*](https://en.wikipedia.org/wiki/Multidimensional_scaling) and, as I hope to show you, it produces some interesting results on this data.  
 
 You can find a JupyterLab notebook version of this post [on GitHub](https://github.com/brilliantFire/Allen-aging-dementia-TBI/blob/master/2018-05-21-EDA-gene-expression-data-multidimensional-scaling-part-1.ipynb).
 
-#### Covered in this post:  
+#### Covered here:  
 It's a lot...  
-1. Loading the [*edgeR*](http://bioconductor.org/packages/release/bioc/html/edgeR.html) and [*limma*](http://bioconductor.org/packages/release/bioc/html/limma.html) libraries from [Bioconductor](http://bioconductor.org/);  
+1. Loading the [*edgeR*](http://bioconductor.org/packages/release/bioc/html/edgeR.html) and [*limma*](http://bioconductor.org/packages/release/bioc/html/limma.html) libraries for differential gene expression analysis from [Bioconductor](http://bioconductor.org/);  
 2. Final preparations & a brief exploration of the gene-sample matrix of counts;  
 3. Getting the dementia status and other info about the sample donors;  
 4. Filtering the data to remove non-expressed and minimally-expressed genes;
@@ -94,7 +94,7 @@ mtext(side = 1, text = 'samples', line = 0.5)
 The **between-sample normalization** procedure discussed later in the post is performed, in part, to account for different library sizes.
 
 ### Get the donor dementia status for the samples
-The `DGElist()` object used by the `edgeR` package will contain both the matrix of counts and the 'sample type', which in our case is the dementia status ('Dementia' or 'No Dementia') of the donor the sample came from. This status is contained in the `act_demented` variable in the donor information table available from the study website download page.
+The `DGElist()` object used by the `edgeR` package will contain both the matrix of counts and the "sample type", which in our case is the dementia status ("Dementia" or "No Dementia") of the donor the sample came from. This status is contained in the `act_demented` variable in the donor information table available from the study website download page.
 
 
 ```R
@@ -106,7 +106,7 @@ names(donor_files)
 
 ![image07]({{ site.baseurl }}/images/2018-05-21-image-07.png)
 
-We have 107 donors with 107 dementia statuses (among other variables) in `donor_files`. We need to match those statuses to the 377 brain samples that we have RNA-seq counts for in `raw_read_counts`. The columns in our count matrix are labeled using `rnaseq_profile_id` numbers that we got from the same table we got the links from to load the data in [the last post about this project](http://blog.vislaywade.com/allen-dementia-gene-expression-data-load-R/). By merging that table (`data_files`) with the `donor_info` table on the shared variable `donor_id`, we now have `act_demented` for each brain sample.
+We have 107 donors with 107 dementia statuses (among other variables) in `donor_files`. We need to match those statuses to the 377 brain samples that we have counts for in `raw_read_counts`. The columns in our count matrix are labeled using `rnaseq_profile_id` numbers that we got from the same table we got the links from to load the data in [the last post about this project](http://blog.vislaywade.com/allen-dementia-gene-expression-data-load-R/). By merging that table (`data_files`) with the `donor_info` table on the shared variable `donor_id`, we now have `act_demented` for each brain sample.
 
 
 ```R
@@ -123,7 +123,7 @@ dim(sample_info)
 ##### *SANITY CHECK*
 It would not be good if we incorrectly matched the gene expression profiles in `raw_read_counts` with the dementia statuses in `act_demented`. We need to check that the columns in the count matrix match the rows in the new `sample_info` dataframe we just made. As mentioned, in the last blog post, we used `data_files` to load the raw counts from each sample into a dataframe by looping through the links in one of its columns. We pulled out the `rnaseq_profile_id` from each entry in that table to be the column name in `raw_read_counts`. Since we did not sort anything, they should both be in the same order (only one's a horizontal vector and the other a vertical one); but before we pull `act_demented` out of `sample_info` to use in the analysis, I want to double check the order.
 
-To do that, we'll take advantage of the fact that `rnaseq_profile_id` is a unique 9 digit number for each sample. We'll add a column to `sample_info` that consists of the column names from the count matrix, `raw_read_counts` (originally derived from the variable `rnaseq_profile_id`). We can subtract the `rnaseq_profile_id` column from `sample_info` from the column names and put that result in a new column, `order_check`. If the values in the columns match, the result should be zero. We can count the number of zeros and it should equal the number of samples we have (377) if everything's in the right order.
+To do that, we'll take advantage of the fact that `rnaseq_profile_id` is a unique 9 digit number for each sample. We'll add a column to `sample_info` that consists of the column names from the count matrix (originally derived from the variable `rnaseq_profile_id`). We can subtract the `rnaseq_profile_id` column from `sample_info` from the column names and put that result in a new column, `order_check`. If the values in the columns match, the result should be zero for that sample. We can count the number of zeros in the `order_check` column and it should equal the number of samples we have (377) if everything's in the right order.
 
 
 ```R
@@ -154,7 +154,7 @@ We begin by putting the counts and dementia statuses into an `edgeR DGEList()` o
 DGE_list <- DGEList(raw_read_counts, group = dementia_status)
 ```
 
-The count matrix (now contained in `DGE_list$counts`) has mRNA counts for 50,283 genes for each of the 377 samples. We want to limit our focus to only genes that are expressed in a sufficient number of samples. Here, we filter the data so that we only keep genes with more than 2 counts per million in at least 10 samples.
+The count matrix is now in `DGE_list$counts`. We want to limit our focus to only genes that are expressed in a sufficient number of samples. Here, we filter the data so that we only keep genes with more than 2 counts per million in at least 10 samples.
 
 
 ```R
@@ -169,10 +169,10 @@ Notice how that reduces the set of genes by more than 50%. This has the effect o
 
 ### Between-Sample Normalization
 ##### Why it's important
-Earlier, we noted the variability in library size among the 377 samples. Ideally, each of the libraries would have the same size so that *relative* differences in the expression of a gene among the samples are the *true differences*. This is in contrast to the *real* situation we have, which is that the differences in the expression of a gene among the samples is some unknown combination of subtle *technical differences* in how the samples were handled (which we don't care about) and *biological differences* (which are sort of the point of the whole thing).  
+Earlier, we noted the variability in library size among the 377 samples. Ideally, each of the libraries would have the same size so that *relative* differences in the expression of a gene among the samples are the *true differences*. This is in contrast to the *real* situation we have, which is that the differences are some unknown combination of subtle *technical differences* in how the samples were handled (which we don't care about) and nifty *biological differences* (which are sort of the point of the whole thing).  
 
 ##### Issues with count data
-Because of this, we have to normalize somehow for differences in library size. Normally, we'd divide the samples by their library sizes but this can have some unwanted effects on count data. In our case, for example, if there were a set of genes in one sample that were very highly (and possibly artificially) expressed, it can result in all the other genes in the sample having substantially (and also artifically) lower relative counts. In a sense, we might think of this kind of normalization as saying "Ok, we're going to have the same total space for each sample's expression count data to fit in and we'll divvy it up proportionally to what's in the original sample." But when you do that in our example, all the space gets taken up by the over-expressed genes, and the rest of the (actual and interesting) gene counts get squeezed. So they would appear artificially smaller when compared to counts for the same gene in other samples. The default normalization method used by the `calcNormFactors()` function in the `edgeR` library - [trimmed mean of M-values (TMM) normalization](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25) - attempts to adjust for this by excluding some of the most highly-expressed genes (that's the "trimmed" part).
+Because of the dependency of the count values on library size, we have to try to normalize for it. Normally, we'd divide the samples by their library sizes but this can have some unwanted effects on count data. In our case, for example, if there were a set of genes in one sample that were very highly (and possibly artificially) expressed, it can result in all the other genes in the sample having substantially (and also artifically) lower relative counts. In a sense, we might think of this kind of normalization as saying "Ok, we're going to have the same total space for each sample's expression count data to fit in and we'll divvy it up proportionally to what's in the original sample." But when you do that in our hypothetical sample with a few highly expressed genes, all the space gets taken up by them, and the rest of the (actual and interesting) gene counts get squeezed. So they would appear artificially smaller when compared to counts for the same gene in other samples. The default normalization method used by the `calcNormFactors()` function in the `edgeR` library - [trimmed mean of M-values (TMM) normalization](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25) - attempts to adjust for this by excluding some of the most highly-expressed genes (that's the "trimmed" part).
 
 By virtue of the method used to determine the counts, they not only have to be normalized for total library size but also for gene length (longer genes tend to have lower counts than shorter genes) and RNA composition. TMM is considered a good method for between-sample normalization because it accomplishes all three of these tasks. However, we can only be confident in its ability to do that if the assumptions of the method are satisfied. For TMM, the assumption is that *the majority of genes are __NOT__ differentially expressed*. Other methods have other assumptions. I'll use TMM here since it's a good general method to begin with.
 
@@ -215,7 +215,7 @@ mtext(side = 1, text = 'samples', line = 0.5)
 
 ![image10]({{ site.baseurl }}/images/2018-05-21-image-10.png)
 
-You can see some subtle differences between the above barplots of unnormalized and normalized samples. The differences are easier to see in histograms.
+It's easier to see in histograms.
 
 ```R
 par(mfrow=c(2 ,1))
@@ -244,26 +244,26 @@ text(18.6,41.0,labels=paste('var = ', toString(round(var(effective_lib_sizes),2)
 
 The variance of the distribution of unnormalized library sizes (top panel below) is greater than that of the normalized ones (bottom panel).
 
-For more detail about TMM normalization, check out [the original 2010 paper by Robinson & Oshlack](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25).
+I'm obviously leaving out a lot about TMM normalization. For more detail about it, check out [the original 2010 paper by Robinson & Oshlack](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25).
 
 ### Visualizing genetic profiles using multidimensional scaling
 ##### Sweet! What's next?
-So now we have our filtered matrix of gene expression counts for the 377 samples. We can think of our samples as points in a 22,377-dimension space (that's the number of genes we have left after filtering). To visualize any relationships between them, we'll have to transform the samples from the original space into meaningful lower dimensions.  
+So now we have our filtered matrix of gene expression counts and have normalized for technical variations among the 377 samples. We can think of our samples as points in a 22,377-dimension space (that's the number of genes we have left after filtering). To visualize any relationships between them, we'll have to transform the samples from the original space into meaningful lower dimensions.  
 
 ##### What is multidimensional scaling (MDS)?
-Multidimensional scaling is a way of examining the similarity (or dissimilarity) among samples/observations. It has some things in common with principal components analysis. The version of the `plotMDS` function available in the `edgeR` library is designed to first compute a measure of differential expression (for example, the \\(log_2\\) fold change in Dementia samples versus No Dementia samples) for each gene. Then, using a subset of the *most differentially expressed genes* (the default is the top 500), it computes the distance matrix between samples. It uses a 'centered' version of that distance matrix in an eigenvalue decomposition.
+Multidimensional scaling is a way of examining the similarity (or dissimilarity) among samples/observations. It has some things in common with principal components analysis. The version of the `plotMDS` function available in the `edgeR` library is designed to first compute a measure of differential expression (for example, the \\(log_2\\) fold change in "Dementia" samples versus "No Dementia" samples) for each gene. Then, using a subset of the *most differentially expressed genes* (the default is the top 500), it computes the distance matrix between samples. It uses a 'centered' version of that distance matrix in an eigenvalue decomposition.
 
 ##### What MDS can and can't tell us
-I really like the example in the [Wikipedia article for MDS](https://en.wikipedia.org/wiki/Multidimensional_scaling) of the kind of problem best-suited for this kind of analysis. Basically, if you're given the aerial (or 'as the crow flies') distances between cities, you can use MDS to discover their coordinates on a map. And while you *can't* use MDS to make conclusions with respect to the original, super-high-dimensional space, you *can* use it to infer something about the similarity/dissimilarity between samples. That is: *samples that are closer together in the MDS plot are more similar to each other than samples that are far away*.    
+I really like the example in the [Wikipedia article for MDS](https://en.wikipedia.org/wiki/Multidimensional_scaling) of the kind of problem MDS is good for. Basically, if you're given the aerial (or 'as the crow flies') distances between cities, you can use MDS to discover their coordinates on a map. And while you *can't* use MDS to make conclusions with respect to the original, super-high-dimensional space, you *can* use it to infer something about the similarity/dissimilarity between samples. That is: *samples that are closer together in the MDS plot are more similar to each other than samples that are far away*.    
 
 ##### Why do it for this project?
-Again, the ultimate goal is to look for genes (or groups of genes) whose expression levels might be good predictors of dementia. One problem is that, even after filtering, there are still 22,377 potential predictors. Including all potential interactions and a constant, that's \\( 2^{22,377} \\) potential terms in a final linear model of dementia status, even before adding in the other predictors we have. We need a way of limiting that further. Another issue is biology, and the fact that differences between samples that we *already know about* are likely to dominate.
+Again, the ultimate goal is to look for genes (or groups of genes) whose expression levels might be good predictors of dementia. One problem is that, even after filtering, there are still 22,377 potential predictors. Including those 22,377 predictors, all potential interactions, and a constant, that's \\( 2^{22,377} \\) potential terms in a final linear model of dementia status, even before adding in the other predictors we have. Obviously, we need a way to limit that.
 
-*Put another way*, things like the donor's sex or the region of the brain that was sampled are likely to account for the majority of differences between the expression profiles. If that's the case, we should see evidence to that effect in the MDS plots. If we do, I might be better off splitting the gene expression data up into those groups (males and females, different brain regions) and looking for differentially expressed genes within them.  
+Another issue is biology, and the fact that differences between samples that we *already know about* are likely to dominate. *Put another way*, things like the donor's sex or the region of the brain that was sampled are likely to account for the majority of differences between expression profiles. If that's the case, we should see evidence to that effect in the MDS plots. If we do, I might be better off splitting the gene expression data up into those groups (males and females, different brain regions) and looking for differentially expressed genes within them.  
 
-**Phew!**
+**Phew!** Still with me? :) Ok!
 
-Still with me? :) Ok! So let's do the thing. We're going to store the results of the `plotMDS` function in the variable `logFC_500`. We'll use the \\(log_2\\) fold changes as the measure of differential expression and use the top 500 differentially expressed genes for the distance matrix. We have the option of telling it how many dimensions in the transformed space to give us coordinates for; I'm choosing `ndim = 4` here.
+Let's do the thing. We're going to store the results of the `plotMDS` function in the variable `logFC_500`. We'll use the \\(log_2\\) fold changes as the measure of differential expression and use the top 500 differentially expressed genes for the distance matrix. We have the option of telling it how many dimensions in the transformed space to give us coordinates for; I'm choosing `ndim = 4` here. Keep in mind that, much like PCA, most of the differences between expression profiles will be captured in the first few dimensions.
 
 The coordinates for the samples in the four new dimensions are stored in `logFC_500$cmdscale.out`. `plotMDS` automatically outputs a plot of the data in the first two dimensions.
 
@@ -283,7 +283,7 @@ head(logFC_500$cmdscale.out)
 
 Interesting, right? The gene expression profiles form two separate clusters in these first two dimensions.
 
-Using the `plotly` library, I was able to create 3-dimensional plots and shade the points according to sex and brain region. `plotly` let's you do things like rotate plots from within a notebook. I'm posting some static shots here (below the code blocks).
+Using the `plotly` library, I was able to create 3-dimensional plots and shade the points according to sex and brain region. `plotly` let's you do things like rotate plots within a notebook. I'm posting some static shots here (below the code blocks).
 
 ```R
 # make a dataframe with 4D coordinates + brain region, sex, & dementia status from sample_info
@@ -333,7 +333,7 @@ layout(scene = list(xaxis = list(title = 'dim-1'),
 
 ![image16]({{ site.baseurl }}/images/2018-05-21-image-16.png)
 
-The four regions of the brain samples came from are:
+The four regions of the brain in the dataset are:
   * *FWM* = forebrain white matter  
   * *HIP* = hippocampus  
   * *PCx* = parietal cortex  
@@ -358,7 +358,7 @@ layout(scene = list(xaxis = list(title = 'dim-2'),
 
 ![image17]({{ site.baseurl }}/images/2018-05-21-image-17.png)
 
-There doesn't appear to be any clear separation of the data along the 4th dimension. As with PCA, most of the differences in the data are captured in the first few transformed dimensions.   
+There doesn't appear to be any clear separation of the data along the 4th dimension.    
 
 Below is the plot in the first 3 dimensions, shaded according to dementia status.
 
@@ -379,11 +379,11 @@ layout(scene = list(xaxis = list(title = 'dim-1'),
 
 ![image18]({{ site.baseurl }}/images/2018-05-21-image-18.png)
 
-We can see that 'Dementia' and 'No Dementia' samples are pretty evenly split between these two major clusters in the MDS plot.
+We can see that "Dementia" and "No Dementia" samples are pretty evenly split between the two major clusters in the first two dimensions as well as between males and females.
 
 ### Conclusions & Next Steps
-This was very revealing and not at all what I expected. When I first saw the two clusters in the first MDS plot, I immediately thought they would be expression profiles from males and females but that was not the case. The profiles do separate based on the donor's sex but along the third dimension.
+This was very revealing and not at all what I expected. When I first saw the two clusters in the first two MDS dimensions, I immediately thought they would be expression profiles from males and females, but that was not the case. The profiles do separate based on the donor's sex but along the third dimension.
 
-It's interesting that the expression profiles from hippocampal samples appear so dissimiliar from the other samples. I'm afraid comparing the expression patterns in those samples to others could be a bit like comparing apples and oranges. I got the same results using 'biological coefficient of variation' (BCV) as the measure of differential expression (instead of logFC) and using several different filtering conditions. So, for next time, I'll split the gene expression data up according to the region of the brain the sample came from and perform the rest of the differential expression analysis within those groups.
+It's interesting that the expression profiles from hippocampal samples appear so dissimiliar from the other samples. I'm afraid comparing the expression patterns in those samples to others could be a bit like comparing apples and oranges. Using "biological coefficient of variation" (BCV) as the measure of differential expression (instead of logFC) or different filtering conditions doesn't seem to alter the clustering results that much. So, for next time, I'll split the gene expression data up according to the region of the brain the sample came from and perform the rest of the differential expression analysis within those groups.
 
-Until then, happy coding, friends!
+Until then, thanks for reading & happy coding, friends!
