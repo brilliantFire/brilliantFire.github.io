@@ -9,7 +9,7 @@ Hi everyone!  This is the second installment in my quest to blog my way through 
 
 This is the first of a couple of posts about exploratory analysis of gene expression data, including identifying *differentially expressed genes*. In this case, those are genes that are up- or down-regulated in samples from donors with dementia versus without it. The expression levels of such genes (or groups/clusters of genes) would be good candidates to include as predictors in the final models. Before we get to that, though, I thought I'd try out a way of visualizing high-dimensional data. It's an unsupervised learning method called [*multidimensional scaling*](https://en.wikipedia.org/wiki/Multidimensional_scaling) and, as I hope to show you, it produces some interesting results on this data.  
 
-You can find a JupyterLab notebook version of this post [on GitHub](https://github.com/brilliantFire/Allen-aging-dementia-TBI/blob/master/2018-05-21-EDA-gene-expression-data-multidimensional-scaling-part-1.ipynb).
+You can find a JupyterLab notebook version of this post in the repo for this project [on GitHub](https://github.com/brilliantFire/Allen-aging-dementia-TBI).
 
 #### Covered here:  
 It's a lot...  

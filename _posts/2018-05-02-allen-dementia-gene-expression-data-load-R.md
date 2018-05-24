@@ -14,7 +14,7 @@ For now, in this post, I'll discuss:
 1. A brief data overview; and,    
 2. Some R code that loads the gene expression data from URLs.  
 
-There's a [Python version of this load script](https://github.com/brilliantFire/Allen-aging-dementia-TBI/blob/master/ETL/expected_count_TPM_FPKM_data_load.py) in the project repo, too.
+There's a Python version of this load script in the project repo, too.
 
 ### A Little About the Data
 I'll discuss the data and its origins in greater detail in a future post. For now, I'd just like to touch on some major points:  
