@@ -285,6 +285,8 @@ Interesting, right? The gene expression profiles form two separate clusters in t
 
 Using the `plotly` library, I was able to create 3-dimensional plots and shade the points according to sex and brain region. `plotly` let's you do things like rotate plots within a notebook. I'm posting some static shots here (below the code blocks).
 
+EDIT: Check out some interactive versions [here](http://blog.vislaywade.com/interactive-MDS-plots-w-plotly/)
+
 ```R
 # make a dataframe with 4D coordinates + brain region, sex, & dementia status from sample_info
 for_plots <- data.frame(logFC_500$cmdscale.out)
