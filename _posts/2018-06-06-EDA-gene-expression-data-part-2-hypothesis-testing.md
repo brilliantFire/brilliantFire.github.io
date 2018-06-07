@@ -4,7 +4,7 @@ comments: true
 tags: dementia R-stats statistics RNA-seq
 title: Hypothesis Testing for Differential Gene Expression
 ---
-Now that we've done [a little exploration](http://blog.vislaywade.com/EDA-gene-expression-data-part-1-multidimensional-scaling/) of the gene expression data from the Allen Institute's [*Aging, Dementia, & TBI*](http://aging.brain-map.org/) study, we're ready to get down to the business of identifying genes or groups of genes that could be good predictors in a model of donor dementia status. To do this, we'll use hypothesis testing to determine if the expression levels for a given gene differ between Dementia and No Dementia brain tissue samples. And since we'll be creating a *family* of these tests - one for each of 20,000+ genes we have - we'll be talking about correcting for [*multiple comparisons*](https://en.wikipedia.org/wiki/Multiple_comparisons_problem) as well.
+Now that we've done [a little exploration](http://blog.vislaywade.com/EDA-gene-expression-data-part-1-multidimensional-scaling/) of the gene expression data from the Allen Institute's [*Aging, Dementia, & TBI*](http://aging.brain-map.org/) study, we're ready to get down to the business of identifying genes or groups of genes that could be good predictors in a model of dementia status. To do this, we'll use hypothesis testing to determine if the expression levels for a given gene differ between Dementia and No Dementia brain tissue samples. And since we'll be creating a *family* of these tests - one for each of 20,000+ genes we have - we have to talk about correcting for [*multiple comparisons*](https://en.wikipedia.org/wiki/Multiple_comparisons_problem) as well.
 
 #### On tap for this post...  
 1. *Preliminaries* - We'll discuss RNA-seq as a Poisson process and how the gene expression data it produces is best modeled.
@@ -21,7 +21,7 @@ RNA-seq, like other techniques that incorporate high-throughput DNA sequencing, 
 
 <center><img src="{{ site.baseurl }}/images/2018-06-06-image-001.png"></center>
 
-When sequencing a genome, each of our biological samples should have the same number of copies of what it is we're sampling from for the point process (the genome). The number of "counts" (or "hits", or "successes") we get within a certain section of the genome (such as a gene) would be described by a [*Poisson distribution*](https://en.wikipedia.org/wiki/Poisson_distribution) with some *rate parameter*, $$\lambda$$.
+When sequencing a genome, each of our biological samples should have the same number of copies of what it is we're sampling from for the point process. The number of "counts" (or "hits", or "successes") we get within a certain section of the genome (such as a gene) would be described by a [*Poisson distribution*](https://en.wikipedia.org/wiki/Poisson_distribution) with some *rate parameter*, $$\lambda$$.
 
 #### ...But RNA-seq data is best fit by a negative binomial distribution
 With RNA-seq, we're sampling from multiple copies of *mRNA transcripts* instead of a single copy of a genome. The number of transcripts for a given gene can exhibit small variations between biological replicates even when controlling for everything else. Because of this, instead of one Poisson distribution, the counts from RNA-seq are better described by a *mixture of Poissons*. The [*negative binomial distribution*](https://en.wikipedia.org/wiki/Negative_binomial_distribution) is frequently used to model the counts from RNA-seq because it can be interpreted as a weighted mixture of Poissons (specifically one where the $$\lambda$$s of those Poissons are [*gamma-distributed*](https://en.wikipedia.org/wiki/Gamma_distribution)). In order to use hypothesis testing to determine whether or not a gene has different counts of transcripts in Dementia versus No Dementia samples, we need to estimate their variance, or *dispersion* ($$\phi$$).
@@ -31,10 +31,10 @@ There are several different methods for estimating a gene's dispersion that seem
 1. There are typically only a few counts *inside* a given gene (AKA "successes") but many, MANY counts *outside* that gene (AKA "failures"). As a result, dispersion estimates can get really big.
 2. A given gene's expression level is likely to be related to those of other genes, so taking into account some of the additional information contained in the dataset can result in more accurate dispersion estimates.
 
-Very briefly, the method we'll use here uses a separate model to produce three types of dispersion estimates$$^2$$:
+Very briefly, the method we'll use here uses a separate model to produce three types of dispersion estimates\\(^2\\):
 1. *Common dispersion* - This is an estimate made under the rule that all the genes must end up with the same dispersion value.  
 2. *Trended dispersion* - Each gene has its own dispersion but they are smoothed according to the average counts for that gene in the dataset. This has the effect of shrinking the individual dispersions towards a shared trend.  
-3. *Tagwise dispersion* - Individual dispersions that are also regularized (like trended) except towards the common dispersion calculated using a subset of neighboring genes.  
+3. *Tagwise dispersion* - Individual dispersions that are also regularized (like trended) except towards the common dispersion calculated of a *subset* of neighboring genes.  
 
 The function below imports a subset of the gene expression data from samples from the same brain region (hippocampus, forebrain white matter, parietal cortex, temporal cortex) or donor sex group (male, female; see the [project repo on GitHub](https://github.com/brilliantFire/Allen-aging-dementia-TBI) for more details). After some tidying up, the counts are filtered and normalized before estimates are made for the common, trended, and tagwise dispersions. The output is saved to an .Rds file as well as returned.
 
@@ -89,22 +89,22 @@ round(sqrt(pcx_norm$common.dispersion), 4)
 
 ![image03]({{ site.baseurl }}/images/2018-06-06-image-003.png)    
 
-It is interpreted as the relative variability of the *real expression levels* (as opposed to the ones we have in the dataset)\\(^2\\). A BCV of 0.3026 is saying that, if we could accurately measure the expression levels in our samples, we would see that they vary when compared to each other by about $$\pm30\%$$ on average.
+It is interpreted as the relative variability of the *real expression levels* (as opposed to the estimates we make from the data)\\(^2\\). A BCV of 0.3026 is saying that, if we could accurately measure the expression levels in our samples, we would see that they vary when compared to each other by about $$\pm30\%$$ on average.
 
 ### Fisher's Exact Test & correcting for multiple comparisons
 #### The problem with multiple comparisons
 To test for differences in the counts for a given gene between groups, we'll use Fisher's Exact Test. `exactTest()` is the `edgeR` version that we'll use here. For this test, the null hypothesis is that there is no difference in the counts in Dementia and No Dementia samples.
 
-Fisher's Exact Test is so-called because the p-value can be calculated exactly, as opposed to being estimated. Unfortunately, there's a problem with p-values when running multiple hypothesis tests. This problem arises directly from the definition of a p-value; namely, that it is *the probability of rejecting the null hypothesis by mistake when it's actually true*. A p-value of 0.05 means that there is a 5% chance that we could be rejecting the null hypothesis by mistake and thus creating a *false positive* result. If we ran 100 such tests, each with a significance level ($$\alpha$$) of 0.05, we'd expect to have ~5 false positives simply by chance.
+Fisher's Exact Test is so-called because the p-value can be calculated exactly, as opposed to being estimated. Unfortunately, there's a problem when running multiple hypothesis tests that arises directly from the definition of a p-value; namely, that it is *the probability of rejecting the null hypothesis by mistake when it's actually true*. A p-value of 0.05 means that there is a 5% chance that we could be rejecting the null hypothesis by mistake and thus creating a *false positive* result. If we ran 100 such tests, each with a significance level ($$\alpha$$) of 0.05, we'd expect to have ~5 false positives simply by chance.
 
 As the number of tests increases, so does the number of potential false positives. In our case, we have 20,599 genes. If we test each at the $$\alpha=0.05$$ level, we could have as many as $$20599 \times 0.05 = 1030$$ genes that we'd say are differentially expressed between Dementia and No Dementia samples but really aren't.
 
 #### Correcting for multiple comparisons: family-wise error rate (FWER) vs. false discovery rate (FDR)
-The effect of multiple comparisons is to make the p-values we get from the exact tests unreliable for deciding whether to reject the null hypothesis. One common method of overcoming this, is to divide the $$\alpha$$ value by the number of tests performed. In the context of a multiple comparisons problem, $$\alpha$$ is the [family-wise error rate (FWER)](https://en.wikipedia.org/wiki/Family-wise_error_rate) and dividing it by the number of tests is known as the [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction).
+The effect of multiple comparisons is to make the p-values we get from the exact tests unreliable for deciding whether to reject the null hypothesis. One common method of overcoming this, is to divide the $$\alpha$$ value by the number of tests performed and use that value as the new cutoff for rejection. In the context of a multiple comparisons problem, $$\alpha$$ is the [family-wise error rate (FWER)](https://en.wikipedia.org/wiki/Family-wise_error_rate) and dividing it by the number of tests is known as the [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction).
 
-The FWER is *the probability of **at least one** incorrect rejection of the null hypothesis*. Because of this, controlling the FWER using the Bonferroni correction is a stringent procedure, resulting in very few false positives. This comes at the cost of more false negatives, though, and that can be a problem when there are 20,000+ tests. For $$\alpha = 0.05$$, the Bonferroni correction would have us reject the null hypothesis when $$p < 0.05 \div 20599 = 0.00000244$$. Not very many genes are going to have differences in the number of counts big enough to result in a p-value that small. We're likely to fail to reject null hypotheses when we should.  
+The FWER is *the probability of **at least one** incorrect rejection of the null hypothesis* in our family of tests. Because of this, controlling the FWER using the Bonferroni correction is a stringent procedure, resulting in very few false positives. This comes at the cost of more false negatives, though, and that can be a problem when there are 20,000+ tests. For $$\alpha = 0.05$$, the Bonferroni correction would have us reject the null hypothesis when $$p < 0.05 \div 20599 = 0.00000244$$. Not many genes are going to have differences in the number of counts big enough to result in a p-value that small. We're likely to fail to reject null hypotheses when we should.  
 
-A more permissive means of correcting for multiple comparisons is to control the [false discovery rate (FDR)](https://en.wikipedia.org/wiki/False_discovery_rate). The FDR is *the **proportion** of rejected null hypotheses that are mistakes*. By controlling for the *proportion* of mistakes rather than the *probability of at least one* of them, controlling the FDR is a less stringent procedure, resulting in more false positives than the Bonferroni correction but substantially fewer false negatives.  
+A more powerful means of correcting for multiple comparisons is to control the [false discovery rate (FDR)](https://en.wikipedia.org/wiki/False_discovery_rate). The FDR is *the **proportion** of rejected null hypotheses that are mistakes*. By controlling for the *proportion* of mistakes rather than the *probability of at least one* of them, controlling the FDR is a less stringent procedure, resulting in more false positives than the Bonferroni correction but substantially fewer false negatives (and therefore greater statistical power).  
 
 There are different methods to control the FDR. The one we'll use here is called the *Benjamini-Hochberg (BH) procedure*$$^3$$. After running the exact tests, the function below uses `topTags()` to perform the BH adjustment and saves the top 1000 genes sorted by the uncorrected p-value. We'll return the uncorrected results of `exactTest()`.
 
@@ -131,7 +131,13 @@ Let's run the tests for the parietal cortex data. In the following, `p.value` is
 pcx_results <- test_genes(pcx_norm, 'pcx', 'auto', p.value = 0.05)
 ```
 
-One thing we can do with the output of the `exactTest()` function is to classify genes into three groups: significant and *upregulated*, not significant, or significant and *downregulated* versus No Dementia samples. To do this, we use `decideTestsDGE()`. We'll use the same BH correction as before and tell it to use 0.01 as the cutoff for the adjusted p-value.
+One thing we can do with the output of `exactTest()` is to classify genes into three groups based on the corrected p-value and the \\(log\_2\\) fold-change between groups:   
+
+1. Significant and *upregulated*  
+2. Not significant, or   
+3. Significant and *downregulated* versus No Dementia samples.  
+
+To do this, we use `decideTestsDGE()` with BH as the correction method and 0.01 as the adjusted p-value cutoff for rejecting the null hypothesis.
 
 ```R
 summary(decideTestsDGE(pcx_results, adjust.method = 'BH', p.value = 0.01))
