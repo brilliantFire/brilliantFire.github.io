@@ -187,7 +187,7 @@ hip_res[1, 'go.CC'][[1]]
 
 `term` is what we'll eventually use to annotate our gene list for clustering validation. Some of these terms are associated with `pubmed` numbers linking them to peer-reviewed publications in NCBI's [PubMed](https://www.ncbi.nlm.nih.gov/pubmed) database, which is nice. `evidence` contains [standardized codes](http://www.geneontology.org/page/guide-go-evidence-codes) from the GO Consortium that indicate how the information in `term` came to be determined. "IDA", for example, stands for "Inferred from Direct Assay", which is pretty strong evidence that what's in term is the truth, while "IEA" - Inferred from Electronic Annotation" - is considered weaker evidence. If we wanted to, we could filter the results to exclude terms with weaker evidence.  
 
-To make things simple, we'll extract the most common `term` value for each gene and put it in a list. We'll identify the genes with no terms by virtue of the fact that they have length = 0. We'll label their ontology as 'unknown'. We'll create separate lists for all three ontologies then combine them into a single dataframe.
+To make things simple, we'll extract the most common `term` value for each gene and put it in a list. We'll identify the genes with no terms by virtue of the fact that they have lists with length = 0. We'll label their ontology as 'unknown'. We'll create separate lists for all three ontologies then combine them into a single dataframe.
 
 ```R
 # initialize lists
