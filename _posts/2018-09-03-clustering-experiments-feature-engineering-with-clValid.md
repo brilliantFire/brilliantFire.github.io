@@ -21,7 +21,7 @@ Let's get started!
 
 ### Clustering Methods & Validation Metrics  
 #### Clustering Algorithms Available in `clValid`
-The `clValid` method allows for the evaluation of up to seven different clustering algorithms at one time:  
+The `clValid` method allows for the evaluation of up to eight different clustering algorithms at one time:  
 1. *Agglomerative Hierarchical Clustering* - One of - if not *the* - most commonly used clustering algorithms. In hierarchical clustering, all of the observations (or genes, in our case) start out in their own clusters and then are merged according to some measure of similarity (or dissimilarity).  
 
 2. *K-means* - Another common clustering method, K-means works iteratively to divide the data into a pre-specified number of \\(k\\) clusters by minimizing the within-cluster sum of squares. K-means only works with Euclidean distances (as opposed to Pearson correlation distances, for example).  
@@ -30,11 +30,13 @@ The `clValid` method allows for the evaluation of up to seven different clusteri
 
 4. *PAM* - AKA "Partitioning Around Medoids". PAM, like K-means, starts with a pre-specified number of \\(k\\) clusters. Unlike K-means, however, PAM can accommodate distances other than Euclidean ones.  
 
-5. *FANNY* - (Noticing a pattern here :) ) FANNY is an algorithm for fuzzy clustering where the result is not a single cluster assignment for each observation but instead a vector for each observation containing the partial membership it has in each cluster. Cluster assignments can be collapsed to a single cluster by choosing the one where the observation's partial membership is highest.  
+5. *CLARA* - CLARA is the same algorithm as PAM except that it's implemented on subsets to speed up computation time.
 
-6. *SOM* - This "Self-Organizing Map" algorithm utilizes artifical neural networks to produce a lower-dimensional representation of high-dimensional data. Much like the multidimensional scaling experiments discussed in earlier posts ([here](http://blog.vislaywade.com/EDA-gene-expression-data-part-1-multidimensional-scaling/) and interactive plots [here](http://blog.vislaywade.com/interactive-MDS-plots-w-plotly/)), SOMs are terrific for visualizing complex, high-dimensional data.  
+6. *FANNY* - (Noticing a pattern here :) ) FANNY is an algorithm for fuzzy clustering where the result is not a single cluster assignment for each observation but instead a vector for each observation containing the partial membership it has in each cluster. Cluster assignments can be collapsed to a single cluster by choosing the one where the observation's partial membership is highest.  
 
-7. *Mixture Model-based clustering* - In this method, the data is modeled as a mixture of Gaussian distributions where each distribution (or, *component*) represents a cluster. Expectation-maximization is used to determine the observations most likely to belong to each component.  
+7. *SOM* - This "Self-Organizing Map" algorithm utilizes artificial neural networks to produce a lower-dimensional representation of high-dimensional data. Much like the multidimensional scaling experiments discussed in earlier posts ([here](http://blog.vislaywade.com/EDA-gene-expression-data-part-1-multidimensional-scaling/) and interactive plots [here](http://blog.vislaywade.com/interactive-MDS-plots-w-plotly/)), SOMs are terrific for visualizing complex, high-dimensional data.  
+
+8. *Mixture Model-based clustering* - In this method, the data is modeled as a mixture of Gaussian distributions where each distribution (or, *component*) represents a cluster. Expectation-maximization is used to determine the observations most likely to belong to each component.  
 
 The first five methods are implemented using functions either from base R, such as `hclust()` for hierarchical clustering, or from the `cluster` package. The SOM functions are part of the `kohonen` package and mixture model clustering is accomplished using the `mclust` package.
 
