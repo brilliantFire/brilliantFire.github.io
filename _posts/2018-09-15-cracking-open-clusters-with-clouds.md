@@ -2,7 +2,7 @@
 layout: post
 comments: true
 tags: dementia clustering data-visualization interpreting-data R-stats RNA-seq
-title: Cracking Open Gene Clusters with Word Clouds
+title: Cracking Open Clusters with Clouds
 ---
 ["Cloud" visualizations, or "tag clouds"](https://en.wikipedia.org/wiki/Tag_cloud) are great ways of summarizing a bunch of data when a frequency table or list would be too unwieldy or confusing. They're most commonly encountered in the context of text mining but we could really use them with anything where there's a large number of categories or bins. In the most common version of these visualizations, the size of category or bin name (or word, in the case of word clouds) is indicative of its frequency. Here's an example using the text of a favorite poem of mine, [*The Love Song of J. Alfred Prufrock*](https://www.poetryfoundation.org/poetrymagazine/poems/44212/the-love-song-of-j-alfred-prufrock) by T.S. Eliot (made using a free, online word cloud generator available [here](https://www.wordclouds.com/)).
 
