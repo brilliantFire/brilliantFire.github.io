@@ -103,7 +103,7 @@ hip_genes03 <- rownames(hip_clusters)[which(hip_clusters$cluster_assignment == 3
 ```
 
 ### Query the [*mygene.info*](http://mygene.info/) Database for Biological Process Terms  
-The `queryMany()` method from the `mygene` package let's look up many genes at one time. We set the `scopes` argument equal to whatever it is we're looking the genes up by, which in our case in the Entrez Gene ID number. We'll tell it to return the gene ontologies (GO).  
+The `queryMany()` method from the `mygene` package let's look up many genes at one time. We set the `scopes` argument equal to whatever it is we're looking the genes up by, which in our case is the Entrez Gene ID number. We'll tell it to return the gene ontologies (GO).  
 
 ```R
 # query mygene.info
