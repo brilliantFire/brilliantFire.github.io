@@ -5,25 +5,26 @@ permalink: /about/
 ---
 
 ## Hello!
-I'm Rebecca Vislay-Wade. My interests include neuroscience, data science, operations, and health care. Currently, I do data management and analysis for [KWF Editorial Services](https://www.kwfco.com/scholarly-journal-editing/), a leading provider of editorial services for the scholarly publishing community.
-
-I am interested in professional opportunities to use data science to help people, especially in health care analytics, digital therapeutic development, and drug discovery. I'd love to discuss what I might bring to your team so please don't hesitate to reach out via the links at the bottom of the page!  
+I'm Rebecca Vislay-Wade. My interests include neuroscience, bioinformatics, data science, operations, and healthcare. I recently started working as a research and development data scientist for [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml), the second largest integrated healthcare delivery and financing system in the United States.  
 
 ### EDUCATION
-* **Master of Science in Predictive Analytics**, Northwestern University, (expected 2018)  
+* **Master of Science in Predictive Analytics**, Northwestern University, (expected March 2019)  
 * **Doctor of Philosophy in Biochemistry**, Harvard University
 * **Master of Arts in Biology**, Harvard University
 * **Bachelor of Philosophy in Molecular Biology**, University of Pittsburgh  
 * **Bachelor of Arts in History & Philosophy of Science**, University of Pittsburgh  
 
 ### EXPERIENCE
+##### *Data Science*
+* **Data Scientist (R&D)**, [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), 2018-Present  
+
 ##### *Data Management & Analysis*
-* **Senior Data Management Associate**, KWF Editorial (Baltimore, MD), 2015-Present  
+* **Senior Data Management Associate**, [KWF Editorial](https://www.kwfco.com/scholarly-journal-editing/) (Baltimore, MD), 2015-2018  
 * **Peer Review Associate**, KWF Editorial, 2014-2015
 
 ##### *Neuroscience Research*
-* **Postdoctoral Research Associate**, Children's National Medical Center (Washington, DC), 2009-2013
-* **Postdoctoral Research Fellow**, National Institutes of Health (Bethesda, MD), 2006-2009
+* **Postdoctoral Research Associate**, [Children's National Medical Center](https://childrensnational.org/) (Washington, DC), 2009-2013
+* **Postdoctoral Research Fellow**, [National Institutes of Health](https://www.nih.gov/) (Bethesda, MD), 2006-2009
 
 ### PUBLICATIONS
 * **Rebecca L. Vislay**, Brandon S. Martin, Jose Luis Olmos-Serrano, Sebila Kratovac, David L. Nelson, Joshua G. Corbin, and Molly M. Huntsman. (2013) "Homeostatic Responses Fail to Correct Defective Amygdala Inhibitory Circuit Maturation in Fragile X Syndrome". *Journal of Neuroscience*. 33(17): 7548 - 7558. [Paper](http://www.jneurosci.org/content/jneuro/33/17/7548.full.pdf)
