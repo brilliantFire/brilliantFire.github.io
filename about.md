@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 ## Hello!
-I'm Rebecca Vislay-Wade. My interests include neuroscience, bioinformatics, data science, operations, and healthcare. I recently started working as a senior research data scientist for [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml), the second largest integrated healthcare delivery and financing system in the United States.  
+I'm Rebecca Vislay-Wade. My interests include neuroscience, bioinformatics, data science, operations, and healthcare. I currently work as a senior research data scientist at [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml), the second largest integrated healthcare delivery and financing system in the United States.  
 
 ### EDUCATION
 * **Master of Science in Predictive Analytics**, Northwestern University  
