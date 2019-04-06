@@ -5,10 +5,10 @@ permalink: /about/
 ---
 
 ## Hello!
-I'm Rebecca Vislay-Wade. My interests include neuroscience, bioinformatics, data science, operations, and healthcare. I recently started working as a research and development data scientist for [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml), the second largest integrated healthcare delivery and financing system in the United States.  
+I'm Rebecca Vislay-Wade. My interests include neuroscience, bioinformatics, data science, operations, and healthcare. I recently started working as a senior research data scientist for [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml), the second largest integrated healthcare delivery and financing system in the United States.  
 
 ### EDUCATION
-* **Master of Science in Predictive Analytics**, Northwestern University, (expected March 2019)  
+* **Master of Science in Predictive Analytics**, Northwestern University  
 * **Doctor of Philosophy in Biochemistry**, Harvard University
 * **Master of Arts in Biology**, Harvard University
 * **Bachelor of Philosophy in Molecular Biology**, University of Pittsburgh  
@@ -16,7 +16,8 @@ I'm Rebecca Vislay-Wade. My interests include neuroscience, bioinformatics, data
 
 ### EXPERIENCE
 ##### *Data Science*
-* **Data Scientist (R&D)**, [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), 2018-Present  
+* **Senior Research Data Scientist**, , [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), Apr 2019-Present
+* **Data Scientist (R&D)**, [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), Nov 2018-Mar 2019  
 
 ##### *Data Management & Analysis*
 * **Senior Data Management Associate**, [KWF Editorial](https://www.kwfco.com/scholarly-journal-editing/) (Baltimore, MD), 2015-2018  
