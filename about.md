@@ -33,6 +33,6 @@ I'm Rebecca Vislay-Wade. My interests include neuroscience, bioinformatics, data
 * **Rebecca L.Vislay-Meltzer**, Adam R.Kampff, Florian Engert. (2006) "Spatiotemporal Specificity of Neuronal Activity Directs the Modification of Receptive Fields in the Developing Retinotectal System". *Neuron*. 50(1): 101 - 114. [Paper](https://www.sciencedirect.com/science/article/pii/S0896627306001334)
 
 ### RANDOM BITS
-* I have seen my favorite band, Phish, 57 times in 14 different states so far. Check out the [Mockingbird Foundation](http://mbird.org/), a nonprofit organization run by Phish "phans" in support of music education!
+* I have seen my favorite band, Phish, 59 times in 14 different states so far. Check out the [Mockingbird Foundation](http://mbird.org/), a nonprofit organization run by Phish "phans" in support of music education!
 * In addition to seeing live music, I enjoy reading, hiking, and birdwatching in my spare time.
 * I am a western Pennsylvania native and currently live in the Greater Pittsburgh Area with my husband, Tim, and our cat, Bialy.
