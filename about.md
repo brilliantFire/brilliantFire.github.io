@@ -9,7 +9,7 @@ I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, 
 
 ### EXPERIENCE
 ##### *Data Science*  
-* **Principal Data Scientist - Informatics**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Dec 2021-Present  
+* **Principal Data Scientist - Clinical**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Dec 2021-Present  
 * **Senior Research Data Scientist**, [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), Apr 2019-Dec 2021
 * **Data Scientist (R&D)**, Highmark Health, Nov 2018-Mar 2019  
 
@@ -38,4 +38,4 @@ I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, 
 ### RANDOM BITS
 * I have seen my favorite band, Phish, 59 times in 14 different states so far. Check out the [Mockingbird Foundation](http://mbird.org/), a nonprofit organization run by Phish "phans" in support of music education!
 * In addition to seeing live music, I enjoy reading, hiking, and birdwatching in my spare time.
-* I am a western Pennsylvania native and currently live in the Greater Pittsburgh Area with my husband, Tim, and our cat, Bialy.
+* I am a western Pennsylvania native and currently live in the Greater Boston Area with my husband, Tim, and our cat, Bialy.
