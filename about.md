@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 ## Hello!
-I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, and clinical operations. I currently work as a data scientist for [Moderna](https://www.modernatx.com/).
+I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, operations research, and leadership. I currently work as a data scientist for [Moderna](https://www.modernatx.com/).
 
 ### EXPERIENCE
 ##### *Data Science*
