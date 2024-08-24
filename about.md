@@ -9,7 +9,7 @@ I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, 
 
 ### EXPERIENCE
 ##### *Data Science*
-* **Senior Principal Data Scientist - Digital for Development**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Apr 2024-Present
+* **Senior Principal Data Scientist - Development**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Apr 2024-Present
 * **Principal Data Scientist - Clinical & Regulatory**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Dec 2021-Apr 2024  
 * **Senior Research Data Scientist**, [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), Apr 2019-Dec 2021
 * **Data Scientist (R&D)**, Highmark Health, Nov 2018-Mar 2019  
