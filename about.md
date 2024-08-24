@@ -8,8 +8,9 @@ permalink: /about/
 I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, and clinical operations. I currently work as a data scientist for [Moderna](https://www.modernatx.com/).
 
 ### EXPERIENCE
-##### *Data Science*  
-* **Principal Data Scientist - Clinical & Regulatory**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Dec 2021-Present  
+##### *Data Science*
+* **Senior Principal Data Scientist - Digital for Development**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Apr 2024-Present
+* **Principal Data Scientist - Clinical & Regulatory**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Dec 2021-Apr 2024  
 * **Senior Research Data Scientist**, [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), Apr 2019-Dec 2021
 * **Data Scientist (R&D)**, Highmark Health, Nov 2018-Mar 2019  
 
@@ -36,6 +37,6 @@ I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, 
 * **Rebecca L.Vislay-Meltzer**, Adam R.Kampff, Florian Engert. (2006) "Spatiotemporal Specificity of Neuronal Activity Directs the Modification of Receptive Fields in the Developing Retinotectal System". *Neuron*. 50(1): 101 - 114. [Paper](https://www.sciencedirect.com/science/article/pii/S0896627306001334)
 
 ### RANDOM BITS
-* I have seen my favorite band, Phish, 62 times in 14 different states so far. Check out the [Mockingbird Foundation](http://mbird.org/), a nonprofit organization run by Phish "phans" in support of music education!
+* I have seen my favorite band, Phish, 63 times in 14 different states so far. Check out the [Mockingbird Foundation](http://mbird.org/), a nonprofit organization run by Phish "phans" in support of music education!
 * In addition to seeing live music, I enjoy reading, hiking, and birdwatching in my spare time.
-* I am a western Pennsylvania native and currently live in the Greater Boston Area with my husband, Tim, and our cat, Jay Catsby.
+* I am a western Pennsylvania native and currently live in the Greater Boston Area with my husband, Tim, and our two cats, Jay Catsby and Nathaniel Clawthorne.
