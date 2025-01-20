@@ -30,11 +30,13 @@ I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, 
 * **Bachelor of Arts in History & Philosophy of Science**, University of Pittsburgh  
 
 ### PUBLICATIONS
-* **Rebecca L. Vislay-Wade**, Thomas F. Scott, (2021). Word cloud for hospitalization admission diagnoses in patients with multiple sclerosis.*Multiple Sclerosis and Related Disorders*, 48, 102681. [Paper](https://doi.org/10.1016/j.msard.2020.102681)  
+Panozzo, C. A., Walsh, E. E., Yang, Z., Wilson, E., Goswami, J., Stoszek, S. K., Loback, A., Ng, T., Francis, B. M., Simorellis, A. K., Huang, W., Li, L., **Vislay-Wade, R.**, Zheng, Z., Anderson, E. J., August, A., Chen, G., & Falsey, A. R. (2024). Leveraging real-world evidence to define severe RSV lower respiratory tract disease in adults. Infectious Diseases and Therapy. https://doi.org/10.1007/s40121-024-01072-4 
 
-* **Rebecca L. Vislay**, Brandon S. Martin, Jose Luis Olmos-Serrano, Sebila Kratovac, David L. Nelson, Joshua G. Corbin, and Molly M. Huntsman. (2013) "Homeostatic Responses Fail to Correct Defective Amygdala Inhibitory Circuit Maturation in Fragile X Syndrome". *Journal of Neuroscience*. 33(17): 7548 - 7558. [Paper](http://www.jneurosci.org/content/jneuro/33/17/7548.full.pdf)
+* **Vislay-Wade, R.L.**, Scott, T.F. (2021). Word cloud for hospitalization admission diagnoses in patients with multiple sclerosis.*Multiple Sclerosis and Related Disorders*, 48, 102681. [Paper](https://doi.org/10.1016/j.msard.2020.102681)  
 
-* **Rebecca L.Vislay-Meltzer**, Adam R.Kampff, Florian Engert. (2006) "Spatiotemporal Specificity of Neuronal Activity Directs the Modification of Receptive Fields in the Developing Retinotectal System". *Neuron*. 50(1): 101 - 114. [Paper](https://www.sciencedirect.com/science/article/pii/S0896627306001334)
+* **Vislay, R.L.**, Martin, B.S., Olmos-Serrano, J.L., Kratovac, S., Nelson, D.L., Corbin, J.G., and Huntsman, M.M. (2013) "Homeostatic Responses Fail to Correct Defective Amygdala Inhibitory Circuit Maturation in Fragile X Syndrome". *Journal of Neuroscience*. 33(17): 7548 - 7558. [Paper](http://www.jneurosci.org/content/jneuro/33/17/7548.full.pdf)
+
+* **Vislay-Meltzer, R.L.**, Kampff, A.R., Engert, F. (2006) "Spatiotemporal Specificity of Neuronal Activity Directs the Modification of Receptive Fields in the Developing Retinotectal System". *Neuron*. 50(1): 101 - 114. [Paper](https://www.sciencedirect.com/science/article/pii/S0896627306001334)
 
 ### RANDOM BITS
 * I have seen my favorite band, Phish, 63 times in 14 different states so far. Check out the [Mockingbird Foundation](http://mbird.org/), a nonprofit organization run by Phish "phans" in support of music education!
