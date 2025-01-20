@@ -40,5 +40,5 @@ I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, 
 
 ### RANDOM BITS
 * I have seen my favorite band, Phish, 63 times in 14 different states so far. Check out the [Mockingbird Foundation](http://mbird.org/), a nonprofit organization run by Phish "phans" in support of music education!
-* In addition to seeing live music, I enjoy reading, hiking, and birdwatching in my spare time.
+* In addition to seeing live music, I enjoy reading, studying Spanish, and birdwatching in my spare time.
 * I am a western Pennsylvania native and currently live in the Greater Boston Area with my husband, Tim, and our two cats, Jay Catsby and Nathaniel Clawthorne.
