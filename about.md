@@ -30,7 +30,7 @@ I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, 
 * **Bachelor of Arts in History & Philosophy of Science**, University of Pittsburgh  
 
 ### PUBLICATIONS
-* Panozzo, C. A., Walsh, E. E., Yang, Z., Wilson, E., Goswami, J., Stoszek, S. K., Loback, A., Ng, T., Francis, B. M., Simorellis, A. K., Huang, W., Li, L., **Vislay-Wade, R.**, Zheng, Z., Anderson, E. J., August, A., Chen, G., & Falsey, A. R. (2024). Leveraging real-world evidence to define severe RSV lower respiratory tract disease in adults. Infectious Diseases and Therapy.[Paper](https://doi.org/10.1007/s40121-024-01072-4)
+* Panozzo, C. A., Walsh, E. E., Yang, Z., Wilson, E., Goswami, J., Stoszek, S. K., Loback, A., Ng, T., Francis, B. M., Simorellis, A. K., Huang, W., Li, L., **Vislay-Wade, R.**, Zheng, Z., Anderson, E. J., August, A., Chen, G., & Falsey, A. R. (2024). Leveraging real-world evidence to define severe RSV lower respiratory tract disease in adults. *Infectious Diseases and Therapy*. [Paper](https://doi.org/10.1007/s40121-024-01072-4)
 
 * **Vislay-Wade, R.L.**, Scott, T.F. (2021). Word cloud for hospitalization admission diagnoses in patients with multiple sclerosis.*Multiple Sclerosis and Related Disorders*, 48, 102681. [Paper](https://doi.org/10.1016/j.msard.2020.102681)  
 
