@@ -1,34 +1,19 @@
----
-layout: default
----
+<h1>{{ page.title }}</h1>
 
- <article class="post">
-   <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
- <h1>{{ page.title }}</h1>
+<span>
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="{{ site.baseurl }}/tag/{{ tag_name | slugify }}" class="read-more">
+      <code class="highlighter_rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;
+    </a>
+  {% endfor %}
+</span>
 
- <span>{
-   {% for tag in page.tags %}
-     {% capture tag_name %}{{ tag }}{% endcapture %}
-     <a href="/tag/{{ tag_name }}" class="read-more"><code class="highlighter_rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
-   {% endfor %}
-  }</span>
-
-  {% if page.htmlwidgets %}
+{% if page.htmlwidgets %}
   {% for html_dep in site.static_files %}
     {% if html_dep.path contains 'htmlwidgets_deps/' %}
-      {% assign start = "<script src=" | append: {{site.baseurl}} %}
-      {{html_dep.path | prepend: start | append: "></script>" }}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-
- <div class="entry">
-      {{ content }}
- </div>
-
- <div class="date">
-      Written on {{ page.date | date: "%B %e, %Y" }}
- </div>
-
-  {% include disqus.html %}
-  </article>
+      {% assign start = "<script src=" | append: site.baseurl %}
+      {{ html_dep.path | prepend: start | append: "></script>" }}
+    {% endif %}
+  {% endfor %}
+{% endif %}
