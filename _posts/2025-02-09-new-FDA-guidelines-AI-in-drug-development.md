@@ -22,7 +22,7 @@ So, what does this mean for those of us actually building and deploying these mo
 
 2. **Regulatory Teams Are Your New Best Friends** – If you haven’t already, start making friends your regulatory affairs and digital quality colleagues. These guidelines mean tighter integration between data science and compliance teams to ensure AI models meet submission requirements.
 
-3. **More Standardization Is Coming** – Organizations will likely develop (or adopt) industry-wide best practices for AI model validation and monitoring. If you’re used to a more experimental, ad-hoc approach, now’s the time to embrace structure.
+3. **More Standardization Is Coming** – Organizations will likely develop (or adopt) industry-wide best practices for AI model validation and monitoring. If you’re used to a more experimental, *ad hoc* approach, now’s the time to embrace structure.
 
 4. **Transparency Is Non-Negotiable** – The FDA is making it clear that "black box" models are fine so long as we share what went into developing and testing them. Be ready to document model choices, data sources, and decision-making rationales in a way that’s digestible for non-technical stakeholders. Rigorous, transparent, complete, and understandable documentation will be key.
 
