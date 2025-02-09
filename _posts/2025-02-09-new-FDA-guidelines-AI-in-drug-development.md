@@ -8,7 +8,9 @@ title: The Impact of the New FDA Guidelines on AI in Drug Discovery
 
 The FDA has just issued [new guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological) last month focused on AI for drug and biological product development, and for those of us in this space, it's a clear signal: AI isn’t just a nice-to-have anymore. It’s central to the future of pharma, but as any fellow comic book fan knows: [With geat power comes great responsibility](https://en.wikipedia.org/wiki/With_great_power_comes_great_responsibility).
 
-![Uncle Ben says the line in "Spiderman 2".]({{ site.baseurl }}/images/spiderman-2-with-great-power.gif)
+<div class="center-image">
+  <img src="{{ site.baseurl }}/images/spiderman-2-with-great-power.gif" alt='Uncle Ben says the line in "Spiderman 2".'>
+</div>
 
 The guidance lays out a risk-based credibility assessment framework to evaluate AI models within specific contexts. The key takeaway? AI outputs need to be reliable, transparent, and—most importantly—aligned with their intended use. In short, it’s time to start thinking like a regulator, not just a researcher.
 
