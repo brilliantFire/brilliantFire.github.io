@@ -5,11 +5,11 @@ permalink: /about/
 ---
 
 ## Hello!
-I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, operations research, and leadership. I currently work as a data scientist for [Moderna](https://www.modernatx.com/).
+I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, operations research, and leadership. I am currently looking for new opportunities in data science leadership. Please reach out via [LinkedIn](https://www.linkedin.com/in/rlvislaywadephd/)a or <a href="mailto:rebecca.vislay@gmail.com">email</a> if you'd like to chat about how I can help your organization run a first-class data science and artifical intelligence operation.
 
 ### EXPERIENCE
 ##### *Data Science*
-* **Senior Principal Data Scientist - Development**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Apr 2024-Present
+* **Senior Principal Data Scientist - Development**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Apr 2024-Aug 2025
 * **Principal Data Scientist - Clinical & Regulatory**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Dec 2021-Apr 2024  
 * **Senior Research Data Scientist**, [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), Apr 2019-Dec 2021
 * **Data Scientist (R&D)**, Highmark Health, Nov 2018-Mar 2019  
