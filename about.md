@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 ## Hello!
-I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, operations research, and leadership. I am currently looking for new opportunities in data science leadership. Please reach out via [LinkedIn](https://www.linkedin.com/in/rlvislaywadephd/)a or <a href="mailto:rebecca.vislay@gmail.com">email</a> if you'd like to chat about how I can help your organization run a first-class data science and artifical intelligence operation.
+I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, operations research, and leadership. I am currently looking for new opportunities in data science leadership. Please reach out via [LinkedIn](https://www.linkedin.com/in/rlvislaywadephd/) or <a href="mailto:rebecca.vislay@gmail.com">email</a> if you'd like to chat about how I can help your organization run a first-class data science and artifical intelligence operation.
 
 ### EXPERIENCE
 ##### *Data Science*
