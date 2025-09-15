@@ -9,7 +9,7 @@ Patient safety and satisfaction should be at the heart of AI intiatives in the c
 
 In this post, we explore possible components of a compliant, patient-centric AI solution strategy. We'll break them down into things that should be done or considered at the beginning of AI intiatives, during the development of the solution, and in post-production.
 
-## What to do before development begins
+## Before development begins
 
 ### Planning for the *entire* project
 Planning is the one of the biggest, most important components of a compliant, patient-centric AI solution strategy. In fact, we could easily break planning down further by what the planning is for (development, testing, or end-to-end process validation to meet regulations). All AI initiatives do some form of planning, obviously, but many times these efforts stop short of the entire product lifecycle. This is especially true for what comes after solutions are put into production. Things like incident management and monitoring processes should be worked out ahead of time so that solutions can hit the ground running. At the planning stage, any validation plans should be made to the extent that they can. We should also have identified all the appropriate stakeholders and teams required to carry out the initiative (engineering, product, and business). There's a lot to consider beyond the technical design of the solution.  
