@@ -19,7 +19,7 @@ In this mode, the focus is on questions like:
 * Could this solution serve multiple use cases beyond the immediate one?
 * How do we build something today that makes future development, testing, and deployment easier?
 
-Strategic mode is about positioning work in a way that maximizes long-term value—for both end users and the organization. It’s closer to Kahneman’s System 1: broad, intuitive, fast-moving insights about an expansive solution space.
+Strategic mode is about positioning work in a way that maximizes long-term value for both end users and the organization. It’s closer to Kahneman’s System 1: broad, intuitive, fast-moving insights about an expansive solution space.
 
 Most teams naturally lean into strategic mode during the design and planning phase. This is where opportunities for “productivity multipliers” emerge. These are things like internal tooling, reusable modules, or even full-fledged platforms. Many of the most powerful enablers of future efficiency come from investing in strategic thinking up front.
 
@@ -42,7 +42,7 @@ Typical questions in tactical mode include:
 
 This mode aligns more with Kahneman’s System 2: deliberate, systematic, and detail-heavy.
 
-While strategic thinking dominates design and planning, tactical thinking takes center stage during building, testing, and deploying MVPs and beyond. It’s about speed, precision, and quality—navigating issues that inevitably arise when a prototype becomes a production system.
+While strategic thinking dominates design and planning, tactical thinking takes center stage during building, testing, and deploying MVPs and beyond. It’s about speed, precision, and quality, navigating issues that inevitably arise when a prototype becomes a production system.
 
 To thrive in tactical mode, teams benefit from structure. Ideally, design and planning outputs include:
 
@@ -50,9 +50,9 @@ To thrive in tactical mode, teams benefit from structure. Ideally, design and pl
 * A rough **sprint plan** and buffer time to account for uncertainty.
 * A **target date** for the first release.
 
-This structure channels effort toward execution—and execution is inherently tactical.
+This structure channels effort toward execution and execution is inherently tactical.
 
 ## Reality
-Of course, saying that planning is strategic and building is tactical is too neat. In reality, both modes are in play throughout the lifecycle. During planning, teams still make tactical choices about fit-for-purpose technologies. During execution, teams often surface strategic insights—like discovering a reusable solution or identifying opportunities for internal tooling.
+Of course, saying that planning is strategic and building is tactical is too neat. In reality, both modes are in play throughout the lifecycle. During planning, teams still make tactical choices about fit-for-purpose technologies. During execution, teams often surface strategic insights, like discovering a reusable solution or identifying opportunities for internal tooling.
 
-The balance shifts over time: strategy dominates early, tactics dominate during execution. But keeping both modes in mind helps leaders create the right conditions for their teams—whether that means carving out space for big-picture thinking or providing structure to support focused execution.
+The balance shifts over time: strategy dominates early, tactics dominate during execution. But keeping both modes in mind helps leaders create the right conditions for their teams. Whether that means carving out space for big-picture thinking or providing structure to support focused execution.
