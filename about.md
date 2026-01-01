@@ -5,10 +5,11 @@ permalink: /about/
 ---
 
 ## Hello!
-I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, operations research, and leadership. I am currently looking for new opportunities in data science leadership. Please reach out via [LinkedIn](https://www.linkedin.com/in/rlvislaywadephd/) or <a href="mailto:rebecca.vislay@gmail.com">email</a> if you'd like to chat about how I can help your organization.
+I'm Rebecca Vislay-Wade. My interests include bioinformatics, machine learning, artificial intelligence, operations research, and leadership. I am currently working at [Alkermes](https://www.alkermes.com/) as an Associate Director of Enterprise Data Science where my work forcuses on AI and ML solutions for problems in pharma R&D. I am also a member of the organizing committee for the annual Pharmaceutical Data Science Conference ([PharmaDS](https://phds.nestat.org/)) sponsored by the New England Statistical Society (NESS).
 
 ### EXPERIENCE
 ##### *Data Science*
+* **Associate Director, Enterprise Data Science**, [Alkermes](https://www.alkermes.com/) (Waltham, MA), Dec 2025 - Present
 * **Senior Principal Data Scientist - Development**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Apr 2024-Aug 2025
 * **Principal Data Scientist - Clinical & Regulatory**, [Moderna](https://www.modernatx.com/) (Cambridge, MA), Dec 2021-Apr 2024  
 * **Senior Research Data Scientist**, [Highmark Health](https://www.highmarkhealth.org/hmk/index.shtml) (Pittsburgh, PA), Apr 2019-Dec 2021
